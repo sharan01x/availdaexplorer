@@ -1,5 +1,7 @@
 # Avail DA Explorer
 
+**🔗 Live demo:** [https://sharan01x.github.io/availdaexplorer](https://sharan01x.github.io/availdaexplorer)
+
 Sample HTML implementation of the Avail DA Explorer, built with the Avail Design System.
 
 Based on the current **Avail DA Explorer** (availproject/infinity-explorer) — a fork of polkadot-js/apps tailored for the Avail network. This implementation adapts the same design system used by the Nexus Explorer into a DA Explorer context.
