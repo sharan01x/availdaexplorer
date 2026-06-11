@@ -95,7 +95,7 @@ var EXAMPLE_STATS = {
   inactiveIssuance: '340.5995 M',
   lastBlockTime:   '4.9 s',
   targetBlockTime:  '20 s',
-  epoch:           '4 hrs 3 mins 49 s',
+  epoch:           '4h 3m 49s',
   lastEvents:      2,
 };
 

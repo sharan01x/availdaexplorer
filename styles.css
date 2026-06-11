@@ -452,7 +452,7 @@ img { display: block; max-width: 100%; }
   gap: 24px;
   align-items: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .site-header__nav { display: flex; }
 }
 
@@ -675,7 +675,7 @@ img { display: block; max-width: 100%; }
   border: 1px solid var(--border-color);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .stats-grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -686,7 +686,7 @@ img { display: block; max-width: 100%; }
   grid-template-columns: repeat(2, 1fr);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .stats-grid--8 {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -706,18 +706,18 @@ img { display: block; max-width: 100%; }
 
 /* Remove right border from last in row */
 .stat-card:nth-child(2n) { border-right: none; }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .stat-card:nth-child(2n) { border-right: 1px solid var(--border-color); }
   .stat-card:nth-child(4n) { border-right: none; }
 }
 .stat-card:last-child { border-right: none; }
 
 /* 8-card grid: row 1 cards keep bottom border, row 2 cards lose it */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .stats-grid--8 .stat-card { border-bottom: none; }
   .stats-grid--8 .stat-card:nth-child(-n+4) { border-bottom: 1px solid var(--border-color); }
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .stats-grid--8 .stat-card { border-bottom: 1px solid var(--border-color); }
   .stats-grid--8 .stat-card:nth-last-child(-n+2) { border-bottom: none; }
 }
@@ -806,7 +806,7 @@ img { display: block; max-width: 100%; }
   border-top: 1px solid var(--border-color);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .content-grid { grid-template-columns: 1fr 1fr; }
 }
 
@@ -1329,7 +1329,7 @@ img { display: block; max-width: 100%; }
 .mobile-menu-toggle {
   display: flex;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .mobile-menu-toggle { display: none; }
 }
 
@@ -1396,4 +1396,216 @@ img { display: block; max-width: 100%; }
   background-repeat: repeat;
   pointer-events: none;
   z-index: 0;
+}
+
+/* ============================================================
+   Responsive — Mobile first overrides (< 640px)
+   ============================================================ */
+@media (max-width: 639px) {
+  /* Header */
+  .site-header__inner {
+    padding: 0 12px;
+    height: 60px;
+  }
+  .site-header__brand .brand-logo {
+    width: 28px;
+    height: 28px;
+  }
+  .site-header__brand-name {
+    font-size: 1rem;
+  }
+  .site-header__brand-sub {
+    font-size: 0.7rem;
+  }
+
+  /* Hide search bar text/kbd on very narrow screens, keep icon */
+  .search-bar {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    justify-content: center;
+  }
+  .search-bar span,
+  .search-bar .search-kbd {
+    display: none;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 24px 12px 20px;
+  }
+  .hero__title {
+    font-size: var(--text-2xl);
+  }
+
+  /* Containers */
+  .outer-container {
+    padding: 16px 8px;
+  }
+  .inner-container {
+    padding: 12px;
+  }
+
+  /* Stats grid */
+  .stat-card {
+    padding: 16px 12px;
+  }
+  .stat-card__inner {
+    gap: 10px;
+  }
+  .stat-card__icon {
+    width: 36px;
+    height: 36px;
+  }
+  .stat-card__value {
+    font-size: 1.125rem;
+  }
+  .stat-card__label {
+    font-size: var(--text-xs);
+  }
+
+  /* Content grid */
+  .content-grid {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  /* Section cards */
+  .section-card__header {
+    padding: 12px 16px;
+  }
+  .section-card__title {
+    font-size: var(--text-sm);
+  }
+
+  /* Data rows */
+  .data-row {
+    padding: 12px 16px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .data-row__left {
+    gap: 8px;
+    min-width: 0;
+    width: 100%;
+  }
+  .data-row__meta {
+    margin-left: 0;
+    gap: 12px;
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 0;
+  }
+  .data-row__hash {
+    max-width: 120px;
+  }
+
+  /* Mobile nav */
+  .mobile-nav {
+    padding: 0 12px 12px;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 0 12px;
+  }
+  .site-footer__inner {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+    position: static;
+  }
+  .site-footer__status,
+  .site-footer__links {
+    position: static;
+    width: 100%;
+    justify-content: center;
+  }
+  .site-footer__links {
+    gap: 12px;
+  }
+
+  /* DA metrics */
+  .da-metric {
+    padding: 14px 16px;
+    gap: 10px;
+  }
+  .da-metric__icon-wrap {
+    width: 36px;
+    height: 36px;
+  }
+  .da-metric__value {
+    font-size: var(--text-xl);
+  }
+}
+
+/* ============================================================
+   Responsive — Tablet (640px – 1023px)
+   ============================================================ */
+@media (min-width: 640px) and (max-width: 1023px) {
+  /* Header */
+  .site-header__inner {
+    padding: 0 16px;
+  }
+
+  /* Search */
+  .search-bar {
+    width: 160px;
+  }
+
+  /* Containers */
+  .outer-container {
+    padding: 24px 16px;
+  }
+  .inner-container {
+    padding: 16px;
+  }
+
+  /* Stats grid stays 2-col on tablet (default), good balance */
+  .stat-card {
+    padding: 20px 16px;
+  }
+
+  /* Content grid: single column on tablet for readability */
+  .content-grid {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  /* Data rows */
+  .data-row {
+    padding: 14px 16px;
+  }
+  .data-row__hash {
+    max-width: 180px;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 0 16px;
+  }
+  .site-footer__inner {
+    padding: 0;
+  }
+}
+
+/* ============================================================
+   Very small phones (< 380px)
+   ============================================================ */
+@media (max-width: 379px) {
+  .hero__title {
+    font-size: var(--text-xl);
+  }
+  .stat-card__value {
+    font-size: 1rem;
+  }
+  .data-row__block-num {
+    font-size: var(--text-xs);
+  }
+  .data-row__hash {
+    max-width: 80px;
+  }
+  .section-card__action {
+    font-size: var(--text-xs);
+  }
 }
